@@ -16,7 +16,7 @@ function App() {
 
       <Sidebar />
       <Header />
-      <main className={` transition-all duration-300 p-6 md:p-8 ${sidebarOpen ? "ml-64":"ml-0"}`} style={{paddingTop:"5rem"}}>
+      <main className={`transition-all duration-300 p-4 md:p-8 ${sidebarOpen ? "lg:ml-64" : "ml-0"}`} style={{paddingTop:"5rem"}}>
         {page === "dashboard" && <Dashboard />}
         {page === "transactions" && <Transactions />}
 

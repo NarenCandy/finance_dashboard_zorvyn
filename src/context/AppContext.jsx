@@ -12,7 +12,7 @@ export function AppProvider({ children }) {
         return saved ? JSON.parse(saved) : transactions
     })
     const [page,setPage]=useState("dashboard")
-    const [sidebarOpen,setSidebarOpen]=useState(true)
+    const [sidebarOpen,setSidebarOpen]=useState(window.innerWidth >= 1024)
     const [darkMode,setDarkMode]=useState(true)
 
     const [filters, setFilters]=useState({

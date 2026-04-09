@@ -17,29 +17,23 @@ export default function Header() {
         <h1 className="font-headline font-bold text-lg text-on-surface">{titles[page]}</h1>
       </div>
 
-      <div className="flex items-center gap-4">
-        <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/30">
+      <div className="flex items-center gap-2 sm:gap-4">
+        <div className="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/30">
           <span className="material-symbols-outlined text-tertiary text-sm">verified_user</span>
           <span className="text-[10px] font-bold uppercase tracking-wider text-tertiary">{role}</span>
         </div>
         <button onClick={toggleDarkMode} className="text-on-surface-variant hover:text-primary transition-colors">
-  <span className="material-symbols-outlined">
-    {darkMode ? "light_mode" : "dark_mode"}
-  </span>
-</button>
-
-        
+          <span className="material-symbols-outlined">{darkMode ? "light_mode" : "dark_mode"}</span>
+        </button>
         <select
           value={role}
           onChange={(e) => setRole(e.target.value)}
-          className="bg-primary text-on-primary text-xs font-bold px-3 py-2 rounded-xl cursor-pointer border-none outline-none"
+          className="bg-primary text-on-primary text-xs font-bold px-2 sm:px-3 py-2 rounded-xl cursor-pointer border-none outline-none"
         >
           <option value="admin">Admin</option>
           <option value="viewer">Viewer</option>
         </select>
         <img src="/avatar.png" alt="profile" className="w-8 h-8 rounded-full border-2 border-primary object-cover" />
-
-       
       </div>
     </header>
   )
